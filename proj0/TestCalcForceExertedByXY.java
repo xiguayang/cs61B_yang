@@ -13,7 +13,7 @@ public class TestCalcForceExertedByXY {
     }
 
 
-    /** Checks whether two doubles are approximately equal. 
+    /** Checks whether two doubles are approximately equal.
      *  @param  expected    Expected double
      *  @param  actual      Double received
      *  @param  eps         Tolerance for the double comparison.
@@ -42,14 +42,14 @@ public class TestCalcForceExertedByXY {
     }
 
     /**
-     *  Checks the Planet class to make sure calcForceExertedByXY works.
+     *  Checks the Body class to make sure calcForceExertedByXY works.
      */
     private static void checkCalcForceExertedByXY() {
         System.out.println("Checking calcForceExertedByX and calcForceExertedByY...");
 
-        Planet p1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
-        Planet p2 = new Planet(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
-        Planet p3 = new Planet(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p1 = new Body(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p2 = new Body(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
+        Body p3 = new Body(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
         checkEquals(p1.calcForceExertedByX(p2), 133.4, "calcForceExertedByX()", 0.01);
         checkEquals(p1.calcForceExertedByX(p3), 4.002e-11, "calcForceExertedByX()", 0.01);
