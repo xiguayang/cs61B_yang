@@ -33,6 +33,11 @@ public class IntList{
     }
     return rest.get(i-1);
   }
+  /**Exercise 2.2.1: Write an addFirst method to the IntList class.
+  * You'll find that the resulting method is tricky as well as inefficient.*/
+  public IntList addFirst(int x ){
+     return new IntList(x,this);
+  }
 
   public static void main(String[] args) {
     IntList L = new IntList(15, null);
@@ -40,6 +45,8 @@ public class IntList{
     L = new IntList(5,L);
     System.out.println(L.size());
     System.out.println(L.iterativeSize());
+    System.out.println(L.get(2));
+    L = L.addFirst(8);
     System.out.println(L.get(2));
 
     /**
