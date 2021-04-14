@@ -26,6 +26,14 @@ public class SLList{
     sentinel.next = new IntNode(x,null);
     size = 1;
   }
+  /**A constructor that takes in an array of integers*/
+  public SLList(int[] arr ){
+    sentinel = new IntNode(63,null);
+    for(int i = arr.length -1;i>=0;i--){
+      sentinel.next = new IntNode(arr[i],null);
+      size = size+1;
+    }
+  }
 
   /**Adds x to the front of the list*/
   public void addFirst(int x ){
@@ -87,6 +95,12 @@ public class SLList{
     return size;
   }
 
+  /**deleteFirst which deletes the first elements from the list*/
+  public void deleteFirst(){
+    size = size -1;
+    sentinel.next = sentinel.next.next;
+  }
+
   public static void main(String[] args) {
     /*Creates a list of one integer, namely 10*/
     SLList L = new SLList(10);
@@ -95,9 +109,17 @@ public class SLList{
     L.addLast(18);
     System.out.println(L.getFirst());
     System.out.println(L.size());
+    L.deleteFirst();
+    System.out.println(L.getFirst());
+    System.out.println(L.size());
     SLList L2 = new SLList();
     L2.addLast(100);
     System.out.println(L2.getFirst());
     System.out.println(L2.size());
+
+    int abc[] = {7,4,22,11};
+    SLList L3 = new SLList(abc);
+    System.out.println(L3.getFirst());
+    System.out.println(L3.size());
   }
 }
