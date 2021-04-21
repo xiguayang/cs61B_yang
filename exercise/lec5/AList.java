@@ -58,4 +58,5 @@ public class AList<T> {
         size = size -1;
         return removedItem;
     }
+
 }
