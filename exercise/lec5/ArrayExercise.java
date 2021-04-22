@@ -26,6 +26,19 @@ public class ArrayExercise{
     }
     return result;
   }
+
+  /**DISC03 EXERCISE 2.2
+  *Consider a method that destructively reverses the items in arr.
+  *For example calling reverse on an array [1, 2, 3] should change the array to be [3, 2, 1]. */
+
+  public static void reverse(int[] arr){
+    for(int i =0;i<=arr.length/2;i++){
+      int temp=arr[i];
+      arr[i]=arr[arr.length-1-i];
+      arr[arr.length-1-i]=temp;
+    }
+  }
+
   public static void main(String[] args) {
     int[] a = {1,3,6,3,7,8};
     int[] b = insert(a,100,0);
