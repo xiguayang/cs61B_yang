@@ -1,5 +1,8 @@
+package IntList;
+
 import static org.junit.Assert.*;
 
+import edu.princeton.cs.algs4.In;
 import org.junit.Test;
 
 public class IntListTest {
@@ -64,6 +67,24 @@ public class IntListTest {
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
+    }
+
+    @Test
+    public void testReverse(){
+        IntList A = IntList.of(1, 2, 3, 4, 5, 6);
+        IntList exp = IntList.of(6, 5, 4, 3, 2, 1);
+        IntList B = IntList.of(1,2);
+        IntList exp2 = IntList.of(2,1);
+        IntList C = IntList.of(1);
+        IntList exp3 = IntList.of(1);
+        IntList result = IntList.reverse(A);
+        assertEquals(exp,result);
+        //Test if A is destroyed
+        assertNotEquals(exp, A);
+        assertEquals(null,IntList.reverse(null));
+        assertEquals(exp2,IntList.reverse(B));
+        assertEquals(exp3,IntList.reverse(C));
+
     }
 
     /** If you're running this from the command line, you'll need
